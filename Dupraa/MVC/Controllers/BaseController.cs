@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
-    public class BaseController<M,R> : Controller where M : BaseModel where R : BaseRepository<M>
+    public class BaseController<T,R> : Controller where T : BaseModel where R : BaseRepository<T>
     {
         R repo = Activator.CreateInstance<R>();
         public ActionResult Index()
@@ -24,7 +24,7 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(M model)
+        public ActionResult Create(T model)
         {
             repo.Create(model);
             return RedirectToAction("List");
@@ -36,7 +36,7 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(M model)
+        public ActionResult Edit(T model)
         {
             repo.Update(model);
             return RedirectToAction("List");
@@ -45,7 +45,7 @@ namespace MVC.Controllers
         {
             return View(repo.Read());
         }
-        public ActionResult Create(int id)
+        public ActionResult Delete(int id)
         {
             repo.Delete(id);
             return RedirectToAction("List");
