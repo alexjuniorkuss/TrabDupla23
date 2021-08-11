@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Data.Models;
+using Data.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+
 namespace MVC.Controllers
 {
-    public class BaseController<M,R> : Controller where M : BaseModels where R : BaseRepository<M>
+    public class BaseController<M,R> : Controller where M : BaseModel where R : BaseRepository<M>
     {
         R repo = Activator.CreateInstance<R>();
         public ActionResult Index()
@@ -41,9 +45,9 @@ namespace MVC.Controllers
         {
             return View(repo.Read());
         }
-        public ActionResult Create(int model)
+        public ActionResult Create(int id)
         {
-            repo.Delete(repo.Read(id));
+            repo.Delete(id);
             return RedirectToAction("List");
         }
     }
