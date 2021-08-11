@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
-
 namespace MVC.Controllers
 {
     public class BaseController<T,R> : Controller where T : BaseModel where R : BaseRepository<T>
