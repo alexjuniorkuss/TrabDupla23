@@ -64,6 +64,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefeicoesDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefeicoesDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RefeicoesDbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefeicoesDbDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +96,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RefeicoesDbDataSet.xsc">
+      <DependentUpon>RefeicoesDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RefeicoesDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RefeicoesDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RefeicoesDbDataSet.xss">
+      <DependentUpon>RefeicoesDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RefeicoesDbDataSet1.xsc">
+      <DependentUpon>RefeicoesDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RefeicoesDbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RefeicoesDbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RefeicoesDbDataSet1.xss">
+      <DependentUpon>RefeicoesDbDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
